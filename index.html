@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="EtsyPulse AI App is a private, owner-operated tool for understanding shop performance, reviewing expenses, and supporting marketing decisions.">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>EtsyPulse AI App</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="header">
+    <a class="brand" href="./" aria-label="EtsyPulse AI App home"><span class="brand-mark" aria-hidden="true">E</span><span>EtsyPulse <strong>AI App</strong></span></a>
+    <nav aria-label="Main navigation"><a href="./" aria-current="page">About</a><a href="privacy.html">Privacy</a></nav>
+  </header>
+  <main id="main">
+    <section class="hero">
+      <p class="eyebrow"><span class="dot" aria-hidden="true"></span>Private application · Owner operated</p>
+      <h1>More insight.<br>More time to design.</h1>
+      <p class="lead">EtsyPulse AI App brings shop performance and business expenses together to help its owner understand sales and make better marketing decisions.</p>
+      <a class="button" href="privacy.html">How data is handled <span aria-hidden="true">↗</span></a>
+      <p class="hero-note">This is the application's information site. The shop dashboard is privately operated and has no public sign-up.</p>
+    </section>
+    <section aria-labelledby="purpose-heading" class="section">
+      <div class="section-heading"><p class="eyebrow">Purpose</p><h2 id="purpose-heading">A clearer view of the business</h2></div>
+      <div class="grid">
+        <article class="card"><span class="card-label">01 / Shop performance</span><h3>Understand the evidence</h3><p>Review Etsy sales, listings, traffic and imported advertising data alongside recorded expenses and data coverage.</p></article>
+        <article class="card"><span class="card-label">02 / Receipt review</span><h3>Keep costs organized</h3><p>Import PDF receipts from an owner-selected Google Drive folder, extract expense details, and review uncertain values or possible duplicates.</p></article>
+        <article class="card"><span class="card-label">03 / Marketing decisions</span><h3>Turn evidence into ideas</h3><p>Use configured AI services to suggest revenue opportunities and listing improvements for the owner's review.</p></article>
+      </div>
+    </section>
+    <section class="drive-panel" aria-labelledby="drive-heading">
+      <div><p class="eyebrow">Google Drive integration</p><h2 id="drive-heading">Receipts and encrypted recovery copies</h2><p>The receipt connection reads PDFs from the selected folder and its subfolders. A separate backup connection, when configured, stores encrypted database snapshots in a dedicated Drive folder and can download them for recovery checks.</p></div>
+      <div class="drive-note"><h3>Access follows the purpose</h3><p>Receipt retrieval uses read-only service-account access. Backup authorization uses <code>drive.file</code> for files created or authorized for the backup app.</p><a href="privacy.html#google-drive">Read the Drive data details <span aria-hidden="true">→</span></a></div>
+    </section>
+  </main>
+  <footer><span>EtsyPulse AI App · Private shop tool</span><a href="privacy.html">Privacy notice</a></footer>
+</body>
+</html>
