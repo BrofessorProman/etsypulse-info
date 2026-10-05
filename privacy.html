@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="How EtsyPulse AI App accesses, uses, stores and shares Google Drive information and business data.">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Privacy notice · EtsyPulse AI App</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="header">
+    <a class="brand" href="./" aria-label="EtsyPulse AI App home"><span class="brand-mark" aria-hidden="true">E</span><span>EtsyPulse <strong>AI App</strong></span></a>
+    <nav aria-label="Main navigation"><a href="./">About</a><a href="privacy.html" aria-current="page">Privacy</a></nav>
+  </header>
+  <main id="main" class="privacy-layout">
+    <div class="privacy-heading"><p class="eyebrow">Data handling</p><h1>Privacy notice</h1><p class="lead">EtsyPulse AI App is a private application operated by its owner for their own business. This notice describes its Google Drive connections and related data processing.</p><p class="updated">Updated October 3, 2026</p></div>
+    <div class="privacy-body">
+      <aside class="contents" aria-label="On this page"><p class="eyebrow">On this page</p><a href="#google-drive">Google Drive access</a><a href="#storage">Local storage and backups</a><a href="#ai">AI analysis</a><a href="#control">Retention and control</a><a href="#website">This information site</a><a href="#contact">Questions</a></aside>
+      <article class="prose">
+        <section id="google-drive"><h2>Google Drive access</h2><p><strong>Receipts:</strong> a separate service-account connection requests the <code>drive.readonly</code> scope. The app is configured to list file metadata and download PDF receipts from the owner's selected folder and its subfolders. It extracts receipt details for expense records and retrieves PDFs for preview. This connection does not edit or delete the original Drive files.</p><p><strong>Backups:</strong> the owner authorizes a separate connection using <code>drive.file</code>. When configured, the backup routine creates encrypted database snapshots in a dedicated Drive folder and can download them to verify recovery. It uses files created or authorized for this backup connection; it does not require access to the owner's existing receipt folder.</p></section>
+        <section id="storage"><h2>Local storage and backups</h2><p>The application stores business records on owner-controlled storage. Expense records include extracted values, source metadata, extraction evidence and revision history. PDF contents can be staged temporarily in the database for extraction; those temporary contents are cleared after extraction or cancellation. Receipt previews are rendered locally in memory, and original documents remain in Drive or the owner's files.</p><p>The backup routine makes a consistent database copy in memory, removes Etsy OAuth tokens and authorization-state records from that copy, and encrypts it locally through rclone before upload to Drive. A recovery check downloads and decrypts a separate copy locally. The backup still contains private business data, and may include temporarily staged PDFs if extraction is pending. Application environment files, service-account key files and rclone credential files are stored separately and are not included in the database snapshot.</p></section>
+        <section id="ai"><h2>AI analysis and other services</h2><p>Receipt extraction and PDF previews do not send raw PDFs or full receipt text to AI services. The backup routine does not call an AI service.</p><p>Configured shop and listing analyses can send selected shop evidence and structured expense information to Anthropic or Google Gemini, including a configured fallback provider. Expense information can include amounts, dates, currencies, categories, cost allocations, provenance and coverage. The recorded-expense projection excludes vendor names, payment-evidence text, private notes, receipt filenames and source locations. Analyses may be requested by the owner or run on an enabled schedule.</p><p>If configured, a notification service receives operational alerts, such as backup failures, listing availability or revenue-change warnings.</p><p>These external services process information under their applicable service terms and policies. Encrypted backups are stored by Google Drive. Google also handles authorization for the backup connection. This notice does not promise deletion of information already processed by an external service.</p></section>
+        <section id="control"><h2>Retention and owner control</h2><p>The owner controls the device, Drive folders, access credentials and backup configuration. Receipt corrections, voids and matching decisions preserve history rather than erasing earlier records. Revoking Drive access stops future authorized access but does not remove previously imported expense evidence or existing backup copies.</p><p>Remote backups do not currently have automatic retention deletion. The owner manages their removal separately. Clearing temporary PDF contents is not a guarantee of secure erasure from historical database pages or earlier snapshots. Requests about records or access should be directed to the application owner.</p></section>
+        <section id="website"><h2>This information site</h2><p>This static site describes the application and does not provide access to the private dashboard. It contains no sign-in, receipt upload, analytics script or embedded shop records. It is intended for hosting on GitHub Pages, where GitHub logs visitor IP addresses for security purposes. See <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub's privacy statement</a> for its hosting practices.</p></section>
+        <section id="contact"><h2>Questions</h2><p>For questions about this private application, use the owner support email displayed on its Google authorization screen. This notice will be updated if the application's access or data processing changes.</p></section>
+      </article>
+    </div>
+  </main>
+  <footer><span>EtsyPulse AI App · Private shop tool</span><a href="./">About the application</a></footer>
+</body>
+</html>
